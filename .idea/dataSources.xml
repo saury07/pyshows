@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3725861351">
+  <component name="DataSourceManagerImpl" format="xml" hash="789465093">
     <data-source source="LOCAL" name="SQLite - PyShows" uuid="f59e493a-cadc-4eda-bf80-2f1994b560c6">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

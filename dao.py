@@ -7,6 +7,7 @@ class DAO(object):
     def __init__(self):
         self.db_path = 'storage/shows.db'
         self.connection = None
+        self.connect()
 
     def connect(self):
         self.connection = sqlite3.connect(self.db_path)
@@ -23,3 +24,20 @@ class DAO(object):
             cursor.execute(request, parameters)
         if commit:
             self.connection.commit()
+        return cursor
+
+
+class EpisodeDAO(DAO):
+
+    def get_episode(self, show, season, number):
+        request = """
+                    SELECT * FROM Episode
+                    WHERE show_name = ? AND season_number = ? AND episode_number = ?
+                  """
+        return self.run(request, (show, season, number)).fetchone()
+
+    def save_episode(self, episode):
+        request = """
+                    INSERT INTO Episode VALUES (?,?,?,?,?,?,?)
+                  """
+        self.run(request, episode, commit=True)
