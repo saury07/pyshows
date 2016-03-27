@@ -36,7 +36,7 @@ class TorrentDownloader(object):
 
     def __init__(self, episode_item):
         self.item = episode_item
-        self.base_path = "/Users/sachaperso/Downloads"
+        self.base_path = "/Users/sachaaury/Downloads/Series"
 
     def download(self):
         if not os.path.exists(self.base_path+'/'+self.item['show']):
